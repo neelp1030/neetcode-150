@@ -49,3 +49,6 @@ class Solution:
                 return True
             
         return False
+
+# time complexity: O(log(m * n))
+# space complexity: O(1)
