@@ -20,6 +20,12 @@
 # Output: 3
 # Explanation: The cars starting at 4 and 7 become a fleet at position 10. The cars starting at 1 and 0 never catch up to the car ahead of them. Thus, there are 3 car fleets that will arrive at the destination.
 
+# each car's speed is not affected by the cars behind it, only the ones ahead of it
+# with this logic, we should consider the cars in the backwards order
+# the last car will always arrive at the destination at a fixed time, so we start there
+# the second last car, depending on its destination time, may or may not catch up to the last car before the destination
+# and so on
+
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
         pair = [[p, s] for p, s in zip(position, speed)]
